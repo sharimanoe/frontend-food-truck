@@ -17,8 +17,8 @@ function SignupPage() {
 
   const handleSignupSubmit = (e) => {
     e.preventDefault();
-    // Create an object representing the request body
     const requestBody = { email, password, name };
+    console.log(email, password, name);
 
     // Send a request to the server using axios
     /* 
@@ -35,11 +35,11 @@ function SignupPage() {
     authService
       .signup(requestBody)
       .then((response) => {
-        // If the POST request is successful redirect to the login page
+        console.log(`calling to the BE service`);
         navigate("/login");
+        console.log(response);
       })
       .catch((error) => {
-        // If the request resolves with an error, set the error message in the state
         const errorDescription = error.response.data.message;
         setErrorMessage(errorDescription);
       });
