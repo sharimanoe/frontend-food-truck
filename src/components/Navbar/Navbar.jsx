@@ -14,6 +14,10 @@ function Navbar() {
       <Link to="/">
         <p>About US</p>
       </Link>
+
+      <Link to="/products">
+        <p>Product Page</p>
+      </Link>
       {isLoggedIn && (
         <>
           <button onClick={logOutUser}>Logout</button>
