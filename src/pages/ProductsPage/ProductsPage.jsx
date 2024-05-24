@@ -32,6 +32,8 @@ const ProductPage = () => {
         {products.map((product) => (
           <li key={product._id}>
             <Link to={`/products/${product._id}`}>{product.name}</Link>
+            <button> + </button>
+            <button> - </button>
           </li>
         ))}
       </ul>

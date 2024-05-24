@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useHistory } from "react-router-dom";
+// import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 
 const EditProduct = () => {
   const { id } = useParams();
-  const history = useHistory();
+  // const history = useHistory();
   const [product, setProduct] = useState({
     image: "",
     name: "",
-    type: "",
+    type: "Food",
     description: "",
     price: "",
-    status: "",
+    status: "Created",
     promotion: "",
   });
 
@@ -36,7 +37,7 @@ const EditProduct = () => {
       .put(`/api/products/${id}`, product)
       .then((response) => {
         console.log(response.data);
-        history.push(`/products/${id}`);
+        // history.push(`/products/${id}`);
       })
       .catch((error) => console.error(error));
   };
