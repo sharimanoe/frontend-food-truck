@@ -22,6 +22,11 @@ function Navbar() {
           <Link to="/products">
             <p>Product Page</p>
           </Link>
+
+          <Link to="/orders">
+            <p>My Orders</p>
+          </Link>
+
           <button onClick={logOutUser}>Logout</button>
 
           <Link to="/profile">
