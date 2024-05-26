@@ -9,9 +9,11 @@ import ProductPage from "./pages/ProductsPage/ProductsPage";
 import Navbar from "./components/Navbar/Navbar";
 import IsPrivate from "./components/IsPrivate/IsPrivate";
 import IsAnon from "./components/IsAnon/IsAnon";
+import AboutUs from "./pages/AboutUs/AboutUs";
 import Footer from "./components/Footer/Footer";
 import ProductDetails from "./pages/ProductDetailPage/ProductDetailPage";
 import EditProduct from "./pages/ProductEditPage/ProductEditPage";
+import OrderPage from "./pages/OrderPage/OrderPage";
 
 function App() {
   return (
@@ -27,6 +29,15 @@ function App() {
             <IsPrivate>
               <ProfilePage />
             </IsPrivate>
+          }
+        />
+
+        <Route
+          path="/aboutUs"
+          element={
+            <IsAnon>
+              <AboutUs />
+            </IsAnon>
           }
         />
 
@@ -57,17 +68,26 @@ function App() {
         <Route
           path="/products/:id"
           element={
-            <IsAnon>
+            <IsPrivate>
               <ProductDetails />
-            </IsAnon>
+            </IsPrivate>
           }
         />
         <Route
           path="/products/edit/:id"
           element={
-            <IsAnon>
+            <IsPrivate>
               <EditProduct />
-            </IsAnon>
+            </IsPrivate>
+          }
+        />
+
+        <Route
+          path="/orders"
+          element={
+            <IsPrivate>
+              <OrderPage />
+            </IsPrivate>
           }
         />
       </Routes>

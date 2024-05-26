@@ -5,15 +5,26 @@ import axios from "axios";
 const ProductDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const token = localStorage.getItem("authToken");
 
   useEffect(() => {
     axios
-      .get(`/api/products/${id}`)
-      .then((response) => setProduct(response.data))
-      .catch((error) => console.error(error));
+      .get(`http://localhost:5005/api/products/${id}`)
+      .then((response) => {
+        setProduct(response.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error);
+        setLoading(false);
+      });
   }, [id]);
 
-  if (!product) return <div>Loading...</div>;
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
 
   return (
     <div>
@@ -24,7 +35,10 @@ const ProductDetails = () => {
       <p>Price: {product.price}</p>
       <p>Status: {product.status}</p>
       <p>Promotion: {product.promotion}</p>
-      <Link to={`/products/edit/${product._id}`}>Edit</Link>
+      {/* <Link to={`/products/edit/${product._id}`}>Edit</Link> */}
+      <Link to="/products">
+        <p>Come Back</p>
+      </Link>
     </div>
   );
 };
