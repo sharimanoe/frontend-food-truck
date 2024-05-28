@@ -1,3 +1,33 @@
-body {
-  margin: 0;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.slabo-27px-regular {
+  font-family: "Slabo 27px", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.slabo-27px-small {
+  font-family: "Slabo 27px", serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.slabo-27px-medium {
+  font-family: "Slabo 27px", serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.slabo-27px-large {
+  font-family: "Slabo 27px", serif;
+  font-weight: 400;
+  font-size: 32px;
+}
+
+.slabo-27px-extra-large {
+  font-family: "Slabo 27px", serif;
+  font-weight: 400;
+  font-size: 48px;
 }
