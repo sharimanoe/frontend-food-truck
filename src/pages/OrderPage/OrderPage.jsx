@@ -39,7 +39,7 @@ const OrderPage = () => {
   }
 
   return (
-    <div>
+    <div className="bg-black slabo-27px-medium text-[#FFEDA3]">
       <h1>My Orders: </h1>
       <ul>
         {orders.map((order) => (

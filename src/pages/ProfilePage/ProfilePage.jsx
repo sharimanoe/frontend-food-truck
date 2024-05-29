@@ -56,6 +56,8 @@ function ProfilePage() {
 
   if (loading) return <p>Loading...</p>;
 
+  if (!user) return <p>User data not found</p>;
+
   return (
     <div className="user-detail">
       <h1>User Detail</h1>
