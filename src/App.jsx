@@ -23,6 +23,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
 
+        <Route path="/aboutUs" element={<AboutUs />} />
+
         <Route
           path="/profile"
           element={
@@ -32,14 +34,14 @@ function App() {
           }
         />
 
-        <Route
+        {/* <Route
           path="/aboutUs"
-          element={
+          element={ 
             <IsAnon>
               <AboutUs />
             </IsAnon>
           }
-        />
+        /> */}
 
         <Route
           path="/signup"

@@ -107,22 +107,43 @@ const ProductPage = () => {
   if (error) return <p>Error loading products: {error.message}</p>;
 
   return (
-    <div>
-      <h1>Product List</h1>
+    <div className="bg-black">
+      <h1 className="slabo-27px-medium text-[#39A9CB]">Product List</h1>
       <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
         <h2>{message}</h2>
       </Modal>
       <ul>
         {products.map((product) => (
           <li key={product._id}>
-            <Link to={`/products/${product._id}`}>{product.name}</Link>
-            <button onClick={() => handleIncrement(product._id)}> + </button>
-            <p>{quantities[product._id]}</p>
-            <button onClick={() => handleDecrement(product._id)}> - </button>
+            <img src={product.image} className="h-12" alt="prod-img" />
+            <Link
+              to={`/products/${product._id}`}
+              className="slabo-27px-small text-white "
+            >
+              {product.name}
+            </Link>
+            <button
+              class="slabo-27px-small bg-[#39A9CB] hover:bg-[#FFEDA3] text-white font-bold py-2 px-4 rounded-full"
+              onClick={() => handleIncrement(product._id)}
+            >
+              +
+            </button>
+            <p className="slabo-27px-small ">{quantities[product._id]}</p>
+            <button
+              class="slabo-27px-small bg-[#39A9CB] hover:bg-[#FFEDA3] text-white font-bold py-2 px-4 rounded-full"
+              onClick={() => handleDecrement(product._id)}
+            >
+              -
+            </button>
           </li>
         ))}
       </ul>
-      <button onClick={handleCreateOrder}> Create Order </button>
+      <button
+        class="slabo-27px-small bg-[#39A9CB] hover:bg-[#FFEDA3] text-white font-bold py-2 px-4 rounded-full"
+        onClick={handleCreateOrder}
+      >
+        Create Order
+      </button>
     </div>
   );
 };
