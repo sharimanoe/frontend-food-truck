@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Modal from "react-modal";
+import SuccessModal from "../../components/Modal/SuccessModal";
 
 const ProductPage = () => {
   const [products, setProducts] = useState([]);
@@ -218,6 +219,12 @@ const ProductPage = () => {
           </button>
         </div>
       </div>
+      {/* -----------//------- modal -----------//------- */}
+      <SuccessModal
+        isOpen={modalIsOpen}
+        onClose={() => setModalIsOpen(false)}
+        message={message}
+      />
     </div>
   );
 };
