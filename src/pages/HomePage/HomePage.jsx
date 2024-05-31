@@ -233,12 +233,10 @@ function HomePage() {
         </div>
       </div>
       {/* --------------//-------------- List of products section --------//----------------*/}
-      <div class="flex items-center max-w-screen-xl">
-        <div class="sm:w-1/2 p-5">
-          <div class="text">
-            <span class="text-gray-500 border-b-2 border-indigo-600 uppercase">
-              Welcome to BIFE
-            </span>
+      <div class="flex items-center justify-center w-full">
+        <div class="text-center p-5">
+          <div class="text ">
+            <span class="text-blue-700 text-5xl">Welcome to BiFe</span>
             <p class="text-gray-700">
               Your go-to place for authentic Argentinian cuisine on wheels!
             </p>
@@ -255,19 +253,19 @@ function HomePage() {
       </div>
       {/* --------------//-------------- List of products section --------//----------------*/}
 
-      <section className="bg-white py-8">
-        <span class="text-gray-500 border-b-2 border-indigo-600 uppercase">
+      <section className="bg-white py-8 ">
+        <span class="text-gray-500 border-b-2 border-blue-700 uppercase">
           Take a look to our options:
         </span>
-        <div className="container mx-auto flex items-center flex-wrap pt-4 pb-12">
+        <div className="container mx-auto flex items-center flex-wrap pt-4 pb-12 m-2">
           {products.map((product) => (
-            <div className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+            <div className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col bg-gray-100">
               <img
-                className="hover:grow hover:shadow-lg"
+                className="hover:grow hover:shadow-lg rounded-lg w-[85%] mx-auto h-[60%]"
                 src={product.image}
                 alt="product"
               />
-              <div className="pt-3 flex items-center justify-between">
+              <div className="pt-3 flex items-center justify-between p-3 text-gray-700">
                 <p className="">{product.name}</p>
                 <p className="">Price: ${product.price.toFixed(2)}</p>
               </div>

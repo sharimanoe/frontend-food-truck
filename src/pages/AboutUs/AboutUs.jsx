@@ -12,11 +12,11 @@ function AboutUs() {
       </div>
       <div class="sm:w-1/2 p-5">
         <div class="text">
-          <span class="text-gray-500 border-b-2 border-indigo-600 uppercase">
+          <span class="text-gray-500 border-b-2 border-blue-700 uppercase">
             About us
           </span>
           <h2 class="my-4 font-bold text-3xl  sm:text-4xl ">
-            About <span class="text-indigo-600">Our FoodTruck</span>
+            About <span class="text-blue-700">Our FoodTruck</span>
           </h2>
           <p class="text-gray-700">
             Welcome to <strong>BiFe</strong>, your go-to food truck for
